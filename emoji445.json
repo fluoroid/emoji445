@@ -935,7 +935,20 @@
     ":jisso:",
     ":kusoga:",
     ":nannan_question:",
-    ":okutta:"
+    ":okutta:",
+    ":gekijo:",
+    ":houji_tya:",
+    ":nottare:",
+    ":rainen:",
+    ":robo_shiko:",
+    ":trauma:",
+    ":uttare:",
+    ":ltd_exp01:",
+    ":kenketu:",
+    ":momooi:",
+    ":gradius_start_:",
+    ":moujuu:",
+    ":sinkyuu:"
   ],
   "four_2": [
     ":ai_sign_misskeyio::ai_sign_misskeyio:",
@@ -1439,7 +1452,15 @@
     ":bird__i_bird__i:",
     ":mahjong_chii::mahjong_chii:",
     ":puxee::puxee:",
-    ":yuu::yuu:"
+    ":yuu::yuu:",
+    ":gacha::gacha:",
+    ":gungun:",
+    ":kin_kogane_gold::kin_kogane_gold:",
+    ":mahjong_pon::mahjong_pon:",
+    ":o_dakuten_ltu::o_dakuten_ltu:",
+    ":purupuru:",
+    ":new_dot::new_dot:",
+    ":site_i::site_i:"
   ],
   "five": [
     ":silence:",
@@ -2266,7 +2287,27 @@
     ":wonderful:",
     ":ionmooru:",
     ":ittenai:",
-    ":zimanyaki:"
+    ":zimanyaki:",
+    ":judge_tle:",
+    ":mama_desuyo:",
+    ":mugichada_kore:",
+    ":neko_no_yosa:",
+    ":ninpuppu:",
+    ":ottyahoi:",
+    ":ozyozisama_heart:",
+    ":paradise_wave:",
+    ":str_logo_noyounamono:",
+    ":sugosugiru:",
+    ":tanome_nu_ka:",
+    ":tyou_soukai:",
+    ":yoku_kitane:",
+    ":ho_nanke:",
+    ":iikuuki:",
+    ":goyuujin_i:",
+    ":homerun:",
+    ":kintamani:",
+    ":norikome:",
+    ":sasaetai:"
   ],
   "four_four": [
     ":battiri_ganbare:",
@@ -2530,7 +2571,11 @@
     ":karada_ha_shoujiki:",
     ":suigou_shougai:",
     ":huyu_haru_mada_dame:",
-    ":sugoine_jintai:"
+    ":sugoine_jintai:",
+    ":ippatsu_gyakutenn:",
+    ":misskey_slang:",
+    ":isshinn_doutai:",
+    ":shougai_kyousou:"
   ],
   "four_five": [
     ":antaga_numberone:",
@@ -2615,7 +2660,11 @@
     ":fukuyama_keibajou:",
     ":appeal_wanted:",
     ":itiban_ii_eiga:",
-    ":onennetsukamatsuru:"
+    ":onennetsukamatsuru:",
+    ":kichouna_aodamo_ga:",
+    ":morimorimachoman:",
+    ":kouhun_sitekita_na:",
+    ":gland_slam:"
   ],
   "four_four_five": [
     ":anatano_jitakuwo_keibishimasu:",
@@ -2641,6 +2690,7 @@
     ":unshiu_mikan_de_gozaimasu:",
     ":watasi_no_bigaku_ni_hansimasu:",
     ":watashiha_kawaiku_arimasen:",
-    ":internet_wa_usobakkari_ii:"
+    ":internet_wa_usobakkari_ii:",
+    ":gamenwo_pinkuni_surunyoro:"
   ]
 }
