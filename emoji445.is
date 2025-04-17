@@ -1,0 +1,123 @@
+/// @ 0.16.0
+/**
+ *  本家様に圧倒的感謝ぁ　play/9p3wsng6av2e0bkm
+ *  2024/08/10 本家様の変更をマージしました。確率を調整しました。
+ *  2025/02/06 小さな文字を含む絵文字も見やすいように結果画面の絵文字をでかくしました。
+ */
+
+// 絵文字の組み合わせ識別用(てきとー)
+let FOUR            = 3
+let FOUR_2          = 4
+let FIVE            = 5
+let FOUR_FOUR       = 44
+let FOUR_FIVE       = 45
+let FOUR_FOUR_FIVE  = 445
+
+/**
+ * 絵文字組み合わせパターン
+ * pattern: 組み合わせパターン
+ * prob: そのパターンが出る確率
+ */
+let patterns = [
+  {pattern: [FOUR_FOUR_FIVE],     prob:  0.4}, // 445
+  {pattern: [FOUR, FOUR_FIVE],    prob: 14.4}, // 4/45
+  {pattern: [FOUR_FOUR, FIVE],    prob: 15.2}, // 44/5
+  {pattern: [FOUR, FOUR_2, FIVE], prob: 32.0}, // 4/2+2/5
+  {pattern: [FOUR, FOUR, FIVE],   prob: 38.0}  // 4/4/5
+]
+
+// 乱数生成器
+let random = Math:gen_rng(`{USER_ID}{Date:now()}`)
+
+// 絵文字リスト格納用
+var emojis = []
+
+/* 
+ * 指定したページ内の先頭の枠のテキスト取ってくる 
+ * @param _username スクリーンネーム(@のやつ)
+ * @param _name ページ名(URLの末尾のやつ)
+ */
+@readPages(_username, _name) {
+  let page = Mk:api("pages/show", {name: _name, username: _username}).content[0].text
+  return Json:parse(page)
+}
+
+/*
+ * 445作る
+ * @param emojis 445作るのに使う絵文字リスト
+ */
+@getYonyongo(emojis) {
+  // 445組み合わせパターン決定
+  let r = random(1 1000) / 10
+  var pattern = []
+  var prob_sum = 0
+
+  for (let i, patterns.len) {
+    prob_sum += patterns[i].prob
+    if (r < prob_sum) {
+      pattern = patterns[i].pattern
+      break
+    }
+  }
+
+  let result = []
+
+  // 絵文字の選択肢決定
+  each (let p, pattern) {
+    var choices = []
+    
+    match true {
+      p == FOUR           => choices = emojis.four
+      p == FOUR_2         => choices = emojis.four_2
+      p == FIVE           => choices = emojis.five
+      p == FOUR_FOUR      => choices = emojis.four_four
+      p == FOUR_FIVE      => choices = emojis.four_five
+      p == FOUR_FOUR_FIVE => choices = emojis.four_four_five
+    }
+    if (choices.len <= 0) {
+      choices = ["えらー"]
+    }
+    
+    result.push(choices[random(0 choices.len - 1)])
+  }
+  
+  return result.join()
+}
+
+/**
+ * 結果を表示する
+ * @param result リザルト
+ */
+@render(result) {
+  // UIを表示
+  Ui:render([
+    Ui:C:container({
+      align: 'center',
+      children: [
+        Ui:C:mfm({ text: `$[x2 {result}]` })
+        Ui:C:button({
+          text: "次の四四五",
+          onClick: main
+        })
+        Ui:C:postFormButton({
+          text: "投稿する",
+          primary: true,
+          form: {
+            text: `{result}{Str:lf}#絵文字四四五調{Str:lf}{THIS_URL}`
+          }
+        })
+      ]
+    })
+  ])
+}
+
+/**
+ * メイン関数
+ */
+@main() {
+  let yonyongo = getYonyongo(emojis)
+  render(yonyongo)
+}
+
+emojis = readPages("Fluoroid", "emoji445")
+main()
