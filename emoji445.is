@@ -8,11 +8,11 @@
 
 // 各絵文字集合の要素数(随時更新)
 let FOUR            = 1021
-let FOUR_2          = 539
+let FOUR_2          = 538
 let FIVE            = 923
-let FOUR_FOUR       = 293
+let FOUR_FOUR       = 294
 let FOUR_FIVE       = 96
-let FOUR_FOUR_FIVE  = 27
+let FOUR_FOUR_FIVE  = 26
 
 // どの要素も同じ確率で抽出される条件の計算用
 let k = 100 / ((FOUR + FOUR_2 + FOUR_FIVE) / 2 + (FOUR_FOUR + FOUR_FOUR_FIVE))
