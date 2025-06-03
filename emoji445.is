@@ -8,7 +8,7 @@
 
 // 各絵文字集合の要素数(随時更新)
 let FOUR            = 1021
-let FOUR_2          = 538
+let FOUR_2          = 537
 let FIVE            = 923
 let FOUR_FOUR       = 294
 let FOUR_FIVE       = 96
